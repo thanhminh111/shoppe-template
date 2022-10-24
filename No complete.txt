@@ -1,0 +1,2 @@
+video 139
+fix: on tablet and mobile: menu items lúc ẩn hiện của cart
