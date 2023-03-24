@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+:root{
+    --primary-color:rgb(237, 78, 46);
+    --white-color:#fff;
+    --black-color:#000;
+    --text-color:#333;
+    --border-color: #dbdbdb;
+    --star-gold-color:#ffce3e;
+    
+    --header-height: 120px;
+    --navbar-height: 28px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+}
+
+*{
+    box-sizing: inherit;
+}
+html{
+    /* hack: 62.5%=10px 1rem=10px=62.5%*/
+    font-size: 62.5%;
+    line-height:1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* common */
+.mr__8px{
+    margin-right: 8px !important;
+}
+
+.mr__24px{
+    margin-right: 24px !important;
+}
+
+.primary_color{
+    color: var(--primary-color) !important ;
+}
+
+
+
+/* Responsive 3 cấp: grid --> row --> column*/
+
+
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.grid__column-2{
+    width: 16.6667%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.grid__column-2-4{
+    width: 20%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.grid__column-10{
+    width:calc(100% - 16.6667%);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+/* modal layout */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.25);
+}
+
+.modal__body{
+    /* position: relative; */
+    /* width:400px ; */
+    /* height: 400px ; 
+    Thường là k cần xét thuộc tính width 
+    và hieght trong trường hợp này vì khi nhập thêm 
+    vào modal__inner thì nó sẽ tự dộng lớn dần lên
+     */
+    margin: auto;
+    z-index: 4;
+}
+
+/* button */
+.btn{
+    min-width: 124px;
+    height: 34px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius:2px ;
+    text-decoration: none;
+    padding: 0 12px;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6rem;
+}
+
+.btn.btn--normal:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn.btn--primary{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn--disabled{
+    cursor: default;
+    background-color: #c3c3c3;
+    color: #949494;
+}
+
+.btn--size-s{
+    height: 32px;
+    padding: 0 8px;
+
+}
+
+.btn.btn--with-icon{
+    font-size: 1.2rem;
+}
+
+
+/* Keyframes animation */
+
+@keyframes growth{
+    from{
+        transform: scale(0);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+@keyframes  fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* Select input */
+.select-input{
+    min-width: 200px;
+    height: 34px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius:2px ;
+    text-decoration: none;
+    padding: 0 12px;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.6rem;
+    justify-content: space-between;
+    background-color: var(--white-color);
+}
+
+/* Pagination */
+
+.pagination{
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 36px;
+    margin-top: 32px;
+}
+
+.pagination-item{
+    list-style: none;
+    padding: 6px 14px 5px;
+    cursor: pointer;
+}
+
+.pagination-item--current{
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.pagination-item--current a{
+    color: var(--white-color);
+
+}
+
+.pagination-item--current:hover{
+    background-color: rgba(237, 78, 46, 0.9);
+}
+
+.pagination-item__link{
+    color: #939393;
+    margin-top: -1px;
+}
+
